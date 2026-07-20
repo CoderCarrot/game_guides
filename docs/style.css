@@ -44,16 +44,43 @@ article aside.portable-infobox {
 @media (max-width: 640px) {
   article aside.portable-infobox { float: none; width: auto; margin: 1rem 0; }
 }
-.section-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 0.4rem 1rem;
-  list-style: none;
-  padding: 0;
+.letter-index {
+  columns: 3 220px;
+  column-gap: 2rem;
   margin: 0.5rem 0 2rem;
 }
-.section-grid li a { text-decoration: none; }
-.section-grid li a:hover { text-decoration: underline; }
+.letter-group {
+  break-inside: avoid;
+  margin-bottom: 0.6rem;
+}
+.letter-group summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.15rem 0;
+  list-style: none;
+}
+.letter-group summary::-webkit-details-marker { display: none; }
+.letter-group summary::marker { content: ""; }
+.letter-group summary::before {
+  content: "▸";
+  display: inline-block;
+  width: 1em;
+  transition: transform 0.15s ease;
+}
+.letter-group[open] summary::before { transform: rotate(90deg); }
+.letter-group ul {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0 0 0 1.1rem;
+}
+.letter-group li a { text-decoration: none; }
+.letter-group li a:hover { text-decoration: underline; }
+.rb0 { color: #880808; }
+.rb1 { color: #CC5500; }
+.rb2 { color: #DAA520; }
+.rb3 { color: #808000; }
+.rb4 { color: #4169E1; }
+.rb5 { color: #69226C; }
 .attribution {
   margin-top: 3rem;
   padding-top: 1rem;
